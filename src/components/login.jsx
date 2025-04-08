@@ -44,7 +44,10 @@ const Login = () => {
         }
       }
     } catch (err) {
-      toast.error(err.response.data.error);
+      const errorMsg =
+        err.response?.data?.error || "Something went wrong. Try again!";
+      toast.error(errorMsg);
+      //toast.error(err.response.data.error);
     }
   };
 
